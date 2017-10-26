@@ -13,8 +13,16 @@ public class Card
 
 	public Card(suits suit, int value)
 	{
+		if ((value <= 13) && (value > 0))
+		{
+			this.value = value;
+		}
+		else
+		{
+			this.value = 1;
+		}
+
 		this.suit = suit;
-		this.value = value;
 	}
 
 
@@ -27,8 +35,6 @@ public class Card
 		retVal = valueToString();
 		retVal += " of ";
 		retVal += s[this.suit.ordinal()];
-		System.out.println(retVal);
-
 		return retVal;
 	}
 	
