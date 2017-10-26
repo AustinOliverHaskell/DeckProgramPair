@@ -4,6 +4,7 @@ public class Driver
 	{
 
 		CardTest test = new CardTest();
+		DeckTest dtest = new DeckTest();
 
 
 
