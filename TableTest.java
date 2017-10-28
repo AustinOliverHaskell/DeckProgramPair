@@ -8,7 +8,9 @@ public class TableTest
 		{
 			Table T = new Table(10);
 			T.deal(10);
-			fail("");
+
+			// Shouldnt be able to deal 70 cards
+			assert fail();
 		}
 		catch(Exception error)
 		{
@@ -26,5 +28,13 @@ public class TableTest
 
 	
 		return retVal;
+	}
+
+
+	private boolean fail()
+	{
+		// Dont have the junit framework installed
+		System.out.println("Failed Test");
+		return false;
 	}
 }

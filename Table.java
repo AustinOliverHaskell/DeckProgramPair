@@ -13,9 +13,6 @@ public class Table
 		{
 			players.add(new ArrayList<Card>());
 		}
-
-
-
 	}
 	public void deal(int numCards) throws DeckException
 	{
@@ -25,8 +22,6 @@ public class Table
 			{
 				players.set(i, deck.dealAHand(numCards));
 			}
-			
-
 		}
 		catch(DeckException error)
 		{
