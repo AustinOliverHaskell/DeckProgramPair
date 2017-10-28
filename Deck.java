@@ -16,6 +16,9 @@ public class Deck
 
 	public void fill()
 	{
+
+		deck.clear();
+
 		for (int value = 1; value <= 13; value++)
 		{
 			for (Card.suits suit : Card.suits.values())
