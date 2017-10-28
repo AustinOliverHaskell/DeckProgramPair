@@ -1,6 +1,7 @@
 import java.util.*;
+import java.io.*;
 
-public class Deck
+public class Deck 
 {
 	private ArrayList<Card> deck;
 	
@@ -36,6 +37,7 @@ public class Deck
 			Collections.swap(deck, i, randNum.nextInt(52));
 		}
 	}
+
 	public void print()
 	{
 		for(int i =0; i< deck.size(); i++)
@@ -43,17 +45,30 @@ public class Deck
 			System.out.println(deck.get(i).toString());
 		}
 	}
-	public Card dealACard()
+
+	public Card dealACard() throws DeckException
 	{
+		if (deck.size() == 0)
+		{
+			throw new DeckException();
+		}
 		return deck.remove(deck.size()-1);
 	}
-	public ArrayList<Card> dealAHand(int numCards)
+
+	public ArrayList<Card> dealAHand(int numCards) throws DeckException
 	{
 		ArrayList<Card> hand = new ArrayList<Card>();
 
-		for (int i = 0; i < numCards; i++)
+		try 
 		{
-			hand.add(dealACard());
+			for (int i = 0; i < numCards; i++)
+			{
+				hand.add(dealACard());
+			}
+		}
+		catch (DeckException error)
+		{
+			throw error;
 		}
 
 		return hand;
