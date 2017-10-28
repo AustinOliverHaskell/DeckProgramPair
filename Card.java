@@ -11,15 +11,17 @@ public class Card
 	private suits suit;
 	private int   value;
 
-	public Card(suits suit, int value)
+	public Card(suits suit, int value) throws Exception
 	{
+
 		if ((value <= 13) && (value > 0))
 		{
 			this.value = value;
 		}
 		else
 		{
-			this.value = 1;
+			
+			throw new Exception();
 		}
 
 		this.suit = suit;

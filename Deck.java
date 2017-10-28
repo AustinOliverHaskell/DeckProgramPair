@@ -23,7 +23,14 @@ public class Deck
 		{
 			for (Card.suits suit : Card.suits.values())
 			{
-				deck.add(new Card(suit, value));
+				try
+				{
+					deck.add(new Card(suit, value));
+				} catch(Exception error)
+				{
+					error.printStackTrace();
+				}
+				
 			}
 		}
 	}
