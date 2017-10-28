@@ -11,6 +11,14 @@ public class DeckTest
 	        deck.dealAHand(5).toString();
 	        assert(deck.getSize() == 46);
 
+
+	        Deck fresh = new Deck();
+	        Deck shuffled = new Deck();
+	        shuffled.shuffle();
+
+	       	// Due to probability this test could potentially be a false negative
+	        assert !(fresh.dealACard().toString().equals(shuffled.dealACard().toString()));
+
         	//deck.dealAHand(55);
     	}
     	catch (DeckException error)
